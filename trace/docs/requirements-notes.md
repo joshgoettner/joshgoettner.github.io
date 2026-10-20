@@ -46,6 +46,12 @@ Working notes from the spec interview. These are agreed decisions and open quest
 - **Group Traces grow together live,** like Find My but showing each person's paths instead of their location.
 - **For now, everyone is shared and identifiable.** Each person has their own color or style, and new procedurally generated colors and patterns emerge where Traces overlap. Finer privacy controls come later.
 
+### Scoped groups
+
+- **A group can limit what members share** to an area (around a ski hill, a city), a time window (Jan 10–14), or both. Example: a ski-trip group that shares only the mountain, only that week. "Family" might share everywhere, always.
+- **Members see the group's scope before joining.**
+- **Each phone computes strands for each group from its own raw data,** so scopes can be retroactive (a time window in the past) without raw data ever leaving the phone.
+
 ## Wall display
 
 - **Targets:** cheap digital picture frames, iPads, TVs. The lowest common denominator is a static image refreshed daily; capable screens get a live web page.
@@ -62,6 +68,36 @@ Working notes from the spec interview. These are agreed decisions and open quest
 - **Language:** English only at launch.
 - **Repo:** Trace moves to its own private repo, `joshgoettner/trace`.
 
+## Milestones (draft)
+
+- **M0:** spec, architecture, repo.
+- **M1:** recorder app. Background GPS, stops, travel mode, recording controls, iCloud backup, and data export. **Ships to friends via TestFlight early, so real data builds up for M2 and M3.**
+- **M2:** strands. Snap to streets, merge trips, detect hubs.
+- **M3:** normalization lab, a tool for tuning boldness on friends' real data.
+- **M4:** renderer v1. Presets, growth over time, map overlay.
+- **M5:** on the phone. Widget, wallpaper shortcut, export, first launch → TestFlight. **This is v1 for friends.**
+- **M6:** groups, including scoped groups.
+- **M7:** wall display.
+- **Later:** privacy mode, deeper customization, Android, payments, App Store launch.
+- **Timing:** no fixed date. Winter is a loose target, and a group ski trip would be a great showcase.
+
+## Targets
+
+- **Battery:** under about 5% a day.
+- **Storage:** under about 50 MB a year (estimate: about 5–10 MB a year of raw data after compression).
+- **Widget image:** ready within a few seconds.
+
+## Data export (M1)
+
+- **An in-app export** of raw data as GPX (a standard GPS format) plus Trace's own format, sent through the iOS share sheet (AirDrop, Files, Messages).
+- **Testers export deliberately** and with explicit consent. Raw data is never uploaded automatically.
+
+## Storage
+
+- **Raw points are stored live** while a day is in progress. Each finished day is **sealed** into a compressed block: positions rounded to about 1 cm (far finer than GPS's 5–15 m accuracy), times and positions stored as small differences from the previous point, then compressed. About 6–10 bytes a point instead of about 80.
+- **Nothing is logged while stationary;** a stop is recorded as a single visit.
+- **Derived data** (matched paths, strands, renders) is a cache that can be rebuilt. **Street data** is a cache that can be cleared for each area.
+
 ## Known drawbacks and risks
 
 - **OpenStreetMap attribution:** credit ("© OpenStreetMap contributors") must appear on map views and on exports that show the map overlay.
@@ -71,6 +107,5 @@ Working notes from the spec interview. These are agreed decisions and open quest
 
 ## Still to cover
 
-- Milestones and what counts as v1.
 - The strand data model in detail: which aggregates are kept and how coarse they are.
 - Performance targets: battery, storage, render time.
