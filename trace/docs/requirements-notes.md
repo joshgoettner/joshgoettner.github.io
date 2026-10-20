@@ -19,6 +19,7 @@ Working notes from the spec interview. These are agreed decisions and open quest
 - **Nothing ever disappears.** Paths only dim relative to more-used paths.
 - **Normalization is the core design problem.** Sparse lives (home and work only) must still look beautiful and inspiring. When one path dominates, emphasize the rarer ones. Tune this with real data.
 - **Hubs emerge** from where you spend time (stops detected and grouped). Hub size reflects time spent there and the paths leading to it. Users can name, pin, merge or hide hubs but never have to set one up. Home is simply the strongest hub.
+- **Chairlifts and gondolas count,** drawn in their own style (OpenStreetMap maps lifts and ski runs).
 - **Travel modes:** everything except flights. Walking, cycling and vehicle can be detected reliably. Bus or train versus car is deferred. Whether each mode gets its own look is open until Josh can try it.
 - **Customization is everything,** but launch with curated presets (form + palette). Later: sliders, per-place edits, data editing.
 - **What you get out of it:** a home-screen widget, wallpaper (via a Shortcuts automation; iOS doesn't let apps set the wallpaper), high-resolution export for social media, and a wall display.
