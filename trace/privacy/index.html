@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trace · Privacy</title>
+<style>
+  :root { --bg: #fbfaf7; --ink: #1d1d1b; --soft: #6b6a66; --line: #e4e1da; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121211; --ink: #ecebe7; --soft: #9c9a94; --line: #2c2b28; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 20px 80px; }
+  h1 { font-size: 15px; letter-spacing: 0.35em; font-weight: 600; margin: 0 0 4px; }
+  .sub { color: var(--soft); margin: 0 0 40px; font-size: 15px; }
+  h2 { font-size: 19px; margin: 36px 0 8px; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 20px; }
+  .lead { font-size: 20px; line-height: 1.5; margin-bottom: 8px; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--soft); font-size: 14px; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>TRACE</h1>
+  <p class="sub">Privacy policy · testing version · updated October 25, 2026</p>
+
+  <p class="lead">Trace turns where you go into a piece of art. Your location history stays on your iPhone and in your own iCloud. Nobody else can see it, including the person who makes Trace.</p>
+
+  <h2>What Trace records</h2>
+  <ul>
+    <li><strong>Your location</strong>, in the background, while you move: position, time, accuracy, speed, direction and altitude.</li>
+    <li><strong>Motion activity</strong> from your iPhone (walking, cycling, driving), to tell how you were traveling.</li>
+    <li><strong>Battery level and location-use statistics</strong> from iOS, to measure how much battery Trace uses.</li>
+    <li><strong>Missed-trip reports</strong>, when you tap the button saying a trip wasn't recorded.</li>
+  </ul>
+
+  <h2>Where it goes</h2>
+  <ul>
+    <li><strong>Your iPhone.</strong> Everything above is stored on your phone.</li>
+    <li><strong>Your own iCloud.</strong> Trace backs up your recordings to the private iCloud storage of your own Apple account, so you can restore them on a new phone. Only you can read it. You can turn this off for Trace in iOS Settings › your name › iCloud.</li>
+    <li><strong>Exports you choose to make.</strong> Trace can export your data as a file. It goes wherever you send it, and nowhere else.</li>
+  </ul>
+  <p>Trace has no accounts, no ads, no analytics and no tracking. Your data is never sold or shared.</p>
+
+  <h2>Street maps</h2>
+  <p>To fit your paths to streets, Trace downloads map data from OpenStreetMap through the public Overpass service (overpass-api.de). Each request asks for one square of map about 1 km across. Like visiting any map website, that service sees your internet address and the map square requested. It never receives your trips, your times or your location history.</p>
+
+  <h2>Testing through TestFlight</h2>
+  <p>While Trace is being tested, it's installed through Apple's TestFlight. Apple shares with the developer what TestFlight normally shares: your name and email if you were invited, when you installed, crash reports, and any feedback or screenshots you choose to send. See Apple's TestFlight terms for details.</p>
+
+  <h2>Deleting your data</h2>
+  <ul>
+    <li>In Trace's Settings you can delete a single day, a stretch of time, or everything. Deleting also removes it from your iCloud backup.</li>
+    <li>Private zones stop Trace from recording at places you choose, and can erase what was already recorded there.</li>
+    <li>Deleting the app removes everything on your iPhone. To remove the backup too, delete Trace's data in iOS Settings › your name › iCloud › Manage Storage.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions or requests: <a href="mailto:joshgoettner@gmail.com">joshgoettner@gmail.com</a></p>
+
+  <footer>This policy covers the testing version of Trace and will be updated before public release.</footer>
+</main>
+</body>
+</html>
